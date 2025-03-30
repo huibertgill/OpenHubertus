@@ -1,8 +1,10 @@
-from config import API_KEY, API_URL
-from chatbot.core import ChatBot
+# src/main.py
+from src.config import get_api_key, get_api_url
+from src.chatbot.core import ChatBot
 
 def main():
-    bot = ChatBot(api_key=API_KEY, api_url=API_URL)
+    # Initialisiere den Chatbot mit den Konfigurationswerten
+    bot = ChatBot()
     print("OpenHubertus Chatbot gestartet.")
     
     while True:

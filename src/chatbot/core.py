@@ -1,13 +1,11 @@
-# In core.py
-import os
-from dotenv import load_dotenv
+import requests
+from src.config import get_api_key, get_api_url, get_model
 
 class ChatBot:
-    def __init__(self, api_key, api_url):
-        load_dotenv()
-        self.api_key = api_key
-        self.api_url = api_url
-        self.model = os.getenv('MODEL', 'gpt-4o-mini')  # Fallback-Modell
+    def __init__(self):
+        self.api_key = get_api_key()
+        self.api_url = get_api_url()
+        self.model = get_model()
     
     def generate_response(self, user_input):
         try:
@@ -18,15 +16,13 @@ class ChatBot:
                     "Content-Type": "application/json"
                 },
                 json={
-                    "model": self.model,  # Dynamisches Modell aus .env
+                    "model": self.model,
                     "messages": [
                         {"role": "system", "content": "You are a helpful assistant named OpenHubertus."},
                         {"role": "user", "content": user_input}
                     ]
                 }
             )
-            
-            print("Raw Response:", response.text)
             
             if response.status_code == 200:
                 response_data = response.json()

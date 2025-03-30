@@ -1,15 +1,13 @@
-# src/api_debug.py
 import requests
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+from config import get_api_key, get_api_url, get_model
 
 def test_api_connection():
-    api_key = os.getenv('API_KEY')
-    api_url = os.getenv('URL')
-    api_model = os.getenv('MODEL')
+    api_key = get_api_key()
+    api_url = get_api_url()
+    api_model = get_model()
+    
     print(f"Testing API Connection to: {api_url}/chat/completions")
+    print(f"Using Model: {api_model}")
     
     try:
         response = requests.post(
@@ -26,11 +24,8 @@ def test_api_connection():
             }
         )
         
-        print("Request: :", requests)
         print("Status Code:", response.status_code)
-        print("Response Headers:", response.headers)
         print("Response Content:", response.text)
-        
     except Exception as e:
         print(f"Connection Error: {e}")
 

@@ -1,9 +1,19 @@
 # src/list_models.py
-import requests
+import sys
 import os
-from dotenv import load_dotenv
+import requests
 
-def get_available_models(api_key, api_url):
+# Pfad-Anpassung für Imports
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.config import get_api_key, get_api_url
+
+def get_available_models():
+    api_key = get_api_key()
+    api_url = get_api_url()
+    
+    print(f"Hole Modelle von: {api_url}/models")
+    
     try:
         response = requests.get(
             f"{api_url}/models",
@@ -13,20 +23,36 @@ def get_available_models(api_key, api_url):
             }
         )
         
+        print(f"Status Code: {response.status_code}")
+        print(f"Response Headers: {response.headers}")
+        print(f"Response Content: {response.text}")
+        
         if response.status_code == 200:
-            # Annahme: Die API gibt eine Liste von Modellen zurück
-            return response.json().get('models', [])
+            # Parsen der Modellantwort
+            models_data = response.json()
+            
+            # Extrahiere Modellnamen 
+            # Die genaue Struktur hängt von der API-Antwort ab
+            if isinstance(models_data, dict) and 'data' in models_data:
+                models = [model.get('id', model) for model in models_data['data']]
+            elif isinstance(models_data, list):
+                models = [model.get('id', model) for model in models_data]
+            else:
+                models = [str(models_data)]
+            
+            return models
         else:
             print(f"Fehler beim Abrufen der Modelle: {response.status_code}")
             print(response.text)
-            return None
+            return []
     
     except Exception as e:
-        print(f"Fehler: {str(e)}")
-        return None
+        print(f"Verbindungsfehler: {e}")
+        return []
 
 def select_and_save_model(models):
     if not models:
+        print("Keine Modelle gefunden.")
         return None
     
     print("Verfügbare Modelle:")
@@ -35,7 +61,12 @@ def select_and_save_model(models):
     
     while True:
         try:
-            choice = int(input("Wählen Sie eine Modell-Nummer: "))
+            choice = input("Wählen Sie eine Modell-Nummer (oder 'q' zum Beenden): ")
+            
+            if choice.lower() == 'q':
+                return None
+            
+            choice = int(choice)
             if 1 <= choice <= len(models):
                 selected_model = models[choice-1]
                 
@@ -61,17 +92,12 @@ def select_and_save_model(models):
                 print("Ungültige Auswahl. Bitte erneut versuchen.")
         
         except ValueError:
-            print("Bitte geben Sie eine gültige Zahl ein.")
+            print("Bitte geben Sie eine gültige Zahl ein oder 'q' zum Beenden.")
 
 def main():
-    load_dotenv()
-    api_key = os.getenv('API_KEY')
-    api_url = os.getenv('URL')
-    
-    models = get_available_models(api_key, api_url)
+    models = get_available_models()
     if models:
         select_and_save_model(models)
 
 if __name__ == "__main__":
     main()
-
