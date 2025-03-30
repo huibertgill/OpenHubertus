@@ -1,12 +1,13 @@
 import requests
-from src.config import get_api_key, get_api_url, get_model
+from src.config import get_api_key, get_api_url, get_model, get_system_prompt
 
 class ChatBot:
     def __init__(self):
         self.api_key = get_api_key()
         self.api_url = get_api_url()
         self.model = get_model()
-    
+        self.system_prompt = get_system_prompt()    
+
     def generate_response(self, user_input):
         try:
             response = requests.post(
@@ -18,7 +19,7 @@ class ChatBot:
                 json={
                     "model": self.model,
                     "messages": [
-                        {"role": "system", "content": "You are a helpful assistant named OpenHubertus."},
+                        {"role": "system", "content": self.system_prompt},
                         {"role": "user", "content": user_input}
                     ]
                 }
