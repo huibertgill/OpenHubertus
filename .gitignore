@@ -1,2 +1,38 @@
-API_KEY=sk-jaxZWbvgHZ68Vo-Gvrx1hw
-URL=https://litellm.arokeks.de
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files (with sensitive data)
+.env
+*.env
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Dependency directories
+node_modules/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
