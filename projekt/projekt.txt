@@ -1,0 +1,30 @@
+# Reisevorschlag für 3 Tage in Koblenz für 2 Erwachsene
+
+## Projektziel
+Das Ziel ist die Erstellung eines detaillierten Reisevorschlags für einen dreitägigen Aufenthalt in Koblenz, der zwei Erwachsenen eine optimale Kombination aus Sehenswürdigkeiten, Kultur, Essen und Freizeitaktivitäten bietet.
+
+## Problemstellung
+Es besteht die Herausforderung, einen ansprechenden und abwechslungsreichen Reiseplan zu entwickeln, der den Interessen und Vorlieben der Reisenden entspricht, während gleichzeitig Zeit- und Budgetrestriktionen beachtet werden.
+
+## Lösungsansatz
+Ein strukturierter Plan wird erstellt, der verschiedene Aspekte der Reise umfasst, wie Unterkunft, Transport, Aktivitäten, Essensmöglichkeiten und eine geeignete zeitliche Planung. Der Vorschlag sollte individuell anpassbar sein und gleichzeitig die Sehenswürdigkeiten und kulturellen Highlights von Koblenz berücksichtigen.
+
+## Projektphasen
+1. **Recherche**: Informationen über Koblenz, einschließlich Sehenswürdigkeiten, Restaurants, Unterkünfte und Transportmöglichkeiten sammeln.
+2. **Bedarfsanalyse**: Klärung der Vorlieben der Reisenden hinsichtlich Aktivitäten und Budget.
+3. **Planung**: Erstellung des ausführlichen Reiseplans unter Berücksichtigung der gesammelten Daten und der Vorlieben.
+4. **Dokumentation**: Ausarbeitung und Präsentation des Reisevorschlags in einem ansprechenden Format.
+5. **Feedback-Runde**: Vorstellung des Plans an die Reisenden und Anpassungen basierend auf deren Rückmeldungen vornehmen.
+
+## Meilensteine
+1. Abschluss der Recherche und Sammlung aller relevanten Informationen.
+2. Fertigstellung der Bedarfsanalyse und Überprüfung der Reisenden-Vorlieben.
+3. Entwurf des vollständigen Reiseplans.
+4. Erstellung des finalen Dokuments.
+5. Präsentation des Vorschlags und Einholen von Feedback.
+
+## Benötigte Ressourcen
+- Online-Recherche-Tools (Webseiten zu Sehenswürdigkeiten, Unterkunftsportalen, Bewertungsplattformen)
+- Budget für mögliche Eintrittspreise, Restaurants und Transport
+- Tools zur Dokumentation (Textverarbeitungssoftware, Präsentationstools)
+- Feedback von Reisenden (z. B. durch Umfragen oder persönliche Gespräche)
