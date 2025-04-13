@@ -7,6 +7,9 @@ Hier ist ein erweiterter Eingang für die README:
 
 OpenHubertus ist ein flexibles, modular aufgebautes Chatbot-Projekt, das es Entwicklern und Enthusiasten ermöglicht, einen KI-gestützten Assistenten individuell zu konfigurieren und zu erweitern.
 
+## Use of AI
+Das Projekt wird komplett mit hilfe von KI erstellt, angefangen hat es mit Claude im Chat, seid Mitte April wird Roo-Code in VS-Code verwendet.
+
 ### Vision
 
 Das Ziel des Projekts ist es, einen anpassbaren Chatbot zu entwickeln, der:
