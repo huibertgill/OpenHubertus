@@ -22,7 +22,7 @@ def main():
     # Optional: Interaktive Chatbot-Schleife
     while True:
         user_input = input("Du: ")
-        if user_input.lower() in ['exit', 'quit', 'bye', '/bye', '/exit']:
+        if user_input.lower() in ['exit', 'quit', 'bye', '/bye', '/exit', '/tschuess']:
             break
         
         response = bot.generate_response(user_input)
