@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.config import get_api_key, get_api_url
 from src.chatbot.core import ChatBot
 from src.project_management import ProjectManager
